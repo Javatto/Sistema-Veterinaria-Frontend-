@@ -1,7 +1,11 @@
+import Container from "react-bootstrap/Container";
+
 const Veterinario = () => {
     return (
         <>
-            Veterinario
+            <Container>
+                Hola
+            </Container>
         </>
     );
   }
