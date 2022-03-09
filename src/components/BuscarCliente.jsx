@@ -11,13 +11,14 @@ import { useState } from 'react';
 const BuscarCliente= () => {
 
     const [clientes, setClientes] = useState([]);
+    const [correo, setCorreo] = useState("");
 
-    function BuscarClientes(correo){
+    const BuscarClientes = () => {
         fetch(`http://localhost:9000/api/cliente/${correo}`)
             .then(res => res.json())
             .then(res => {
-                setClientes(res);
-            })
+            setClientes(res);
+        })
     }
 
     return (
@@ -28,7 +29,7 @@ const BuscarCliente= () => {
                         <Col lg="8">
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Correo</Form.Label>
-                                <Form.Control type="email" placeholder="Escirbir el correo del cliente" />
+                                <Form.Control type="email" placeholder="Escirbir el correo del cliente"  onChange={(e) => {setCorreo(e.target.value)}} />
                             </Form.Group>
                         </Col>
                         <Col lg="3" className='btnBuscarcliente'>
@@ -62,7 +63,7 @@ const BuscarCliente= () => {
                 </Col>
                 <Col lg="5" className='ConsultarCliente'>
                     <Card border="primary" className="text-center">
-                        <Card.Header>Nombre completo</Card.Header>
+                        <Card.Header></Card.Header>
                         <Card.Body>
                             <Card.Title>Primary Card Title</Card.Title>
                             <Card.Text>
