@@ -67,7 +67,7 @@ const BuscarCliente = () => {
                 </Col>
                 <Col lg="5" className='ConsultarCliente'>
                     {
-                        (clientes.length !== 0) ? (<ConsultarCliente  cliente={clientes}></ConsultarCliente>) : (<div>Hola</div>)  
+                        (clientes.length !== 0) ? (<ConsultarCliente  cliente={clientes}></ConsultarCliente>) : (<div>No hay resultados</div>)  
                     }
                 </Col>
             </Row>
